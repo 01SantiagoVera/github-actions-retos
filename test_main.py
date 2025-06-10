@@ -1,5 +1,10 @@
 import unittest
+import os
 
+if os.getenv("CI") == "true":
+    edad=20
+else:
+    edad=int(input("ingrese la edad"))
 
 class TestEdad(unittest.TestCase):
 
