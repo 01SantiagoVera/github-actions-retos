@@ -1,0 +1,19 @@
+name: hola santiago
+
+on: [push]
+
+jobs:
+  saludo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar nombre
+        run: echo "Hola, soy santiago"
+
+      - name: verificar si es de dia o de noche
+        run: |
+          hora=$(date +%H)
+          if [ $hora -ge 6 ] && [ $hora -lt 18 ]; then 
+            echo "¡Buenos días, parcero!"
+          else
+            echo "¡Buenas noches, parcero!"
+          fi
