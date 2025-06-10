@@ -12,7 +12,8 @@ jobs:
       - name: verificar si es de dia o de noche
         run: |
           hora=$(date +%H)
-          if [ $hora -ge 6 ] && [ $hora -lt 18 ]; then 
+          hora_colombia=$(( (hora + 19) % 24 ))
+          if [ $hora_colombia -ge 6 ] && [ $hora_colombia -lt 18 ]; then
             echo "¡Buenos días, parcero!"
           else
             echo "¡Buenas noches, parcero!"
