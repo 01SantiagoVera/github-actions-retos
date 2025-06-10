@@ -6,8 +6,11 @@ jobs:
   saludo:
     runs-on: ubuntu-latest
     steps:
-      - name: Mostrar nombre
-        run: echo "Hola, soy santiago"
+      - name: Info del commmit
+        run: |
+          echo "Hola, ${{ github.actor }}"
+          echo "hiciste:  ${{ github.event.head_commit.author.name }}"
+          echo "
 
       - name: verificar si es de dia o de noche
         run: |
