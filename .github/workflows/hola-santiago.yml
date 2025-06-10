@@ -22,7 +22,7 @@ jobs:
             echo "¡Buenas noches, parcero!"
           fi
 
-  validar main:
+  validarMain:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del repo
