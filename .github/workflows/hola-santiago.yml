@@ -22,7 +22,7 @@ jobs:
             echo "¡Buenas noches, parcero!"
           fi
 
-  HolaMundo:
+  validar main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del repo
@@ -42,3 +42,12 @@ jobs:
             echo "❌ No se encontró main.py"
             exit 1
           fi
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repo
+        uses: actions/checkout@v4
+
+      - name: pruebas unitarias
+        run: python3 -m unittest discover -s . -p "test_*.py"
