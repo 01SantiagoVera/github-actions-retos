@@ -1,5 +1,5 @@
 import unittest
-
+from main import es_mayor_de_edad
 
 class TestEdad(unittest.TestCase):
 
