@@ -25,7 +25,6 @@ jobs:
   HolaMundo:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/cheakout@v4
 
       - name: saludo
         run: |
