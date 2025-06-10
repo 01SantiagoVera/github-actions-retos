@@ -1,4 +1,4 @@
-name: hola santiago
+name: hola Autor validar cambios
 
 on: [push]
 
@@ -20,4 +20,23 @@ jobs:
             echo "¡Buenos días, parcero!"
           else
             echo "¡Buenas noches, parcero!"
+          fi
+
+  HolaMundo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/cheakout@v4
+
+      - name: saludo
+        run: |
+          echo "Hola:  ${{ github.event.head_commit.author.name }} estamos revisando tus cambios"
+
+      - name: Validar existencia py
+        run: |
+          if [ -f main.py ]; then
+            echo "main.py encontrado"
+            python3 main.py
+          else
+            echo "❌ No se encontró main.py"
+            exit 1
           fi
